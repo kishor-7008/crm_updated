@@ -2,18 +2,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 const route = require('./src/routes/route');
 const socket = require('socket.io');
-require('dotenv').config()
-const multer = require('multer')
-const jwt = require("jsonwebtoken")
-const app = express()
-const cors = require("cors")
+require('dotenv').config();
+const multer = require('multer');
+const jwt = require("jsonwebtoken");
+const app = express();
+const cors = require("cors");
 mongoose.set('strictQuery', false);
-app.use(cors())
-const Leads = require("./src/models/leadsModel")
-const cookieParser = require("cookie-parser")
+app.use(cors());
+const Leads = require("./src/models/leadsModel");
+const cookieParser = require("cookie-parser");
 app.use(express.json());
-app.use(cookieParser())
-app.use(multer().any())
+app.use(cookieParser());
+app.use(multer().any());
 
 
 const connection_url = process.env.MONGO_URL
